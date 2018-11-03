@@ -5,6 +5,7 @@ import cats._, cats.implicits._
 import www.example.com.IPO._
 import sxbtest.protocol._
 
+// Adapted from http://scalaxb.org/running-scalaxb
 object Main extends MainHelpers {
   def main(args: Array[String]): Unit = {
     val shipTo = scalaxb.fromXML[Address](subject)

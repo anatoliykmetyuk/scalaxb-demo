@@ -1,0 +1,3 @@
+[submodule "scalaxb"]
+	path = scalaxb
+	url = https://github.com/anatoliykmetyuk/scalaxb.git

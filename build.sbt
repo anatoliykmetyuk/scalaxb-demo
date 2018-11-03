@@ -1,3 +1,5 @@
+import scala.sys.process._ 
+
 val ScalaVer = "2.12.7"
 
 val CatsEffect    = "1.0.0"
@@ -30,6 +32,8 @@ lazy val commonSettings = Seq(
     , "-Xfuture"
     , "-Ypartial-unification")
 )
+
+lazy val generateSources = taskKey[Unit]("Generate sources")
 
 lazy val root = (project in file("."))
   .settings(commonSettings)

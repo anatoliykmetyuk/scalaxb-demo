@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
-EXEC_NAME="./scalaxb/scalaxb-1.5.2"
+SCALAXB_DIR="./scalaxb"
+EXEC_NAME="$SCALAXB_DIR/scalaxb"
 MUTABLE="$1"
 
 # Build scalaxb executable if not already exists
-[[ ! -f "$EXEC_NAME" ]] && (cd ../scalaxb; sbt "project app" "assembly")
+[[ ! -f "$EXEC_NAME" ]] && (cd "$SCALAXB_DIR";
+  sbt "project app" "assembly";
+  mv "scalaxb-*" "scalaxb")
 
 # Build sources of the XML schema located under ./schema.
 # Output to ./schema_src
